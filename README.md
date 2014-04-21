@@ -20,7 +20,8 @@ Hopefully this will prevent you from spending hours converting Waypoints by hand
 
 Run
 ---------------
-Simply download the bin/ReiVoxelConverter.jar file and run it using Java. (Normally no issue when Java is installed)
+Simply download the bin/ReiVoxelConverter.jar file and run it using Java. (Normally no issue when Java is installed).
+You can download the jar file from here: https://github.com/RapSolutions/ReiVoxelConverter/raw/master/bin/ReiVoxelConverter.jar
 
 Help code
 ---------------
