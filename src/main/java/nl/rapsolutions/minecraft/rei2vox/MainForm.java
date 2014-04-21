@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * Created by ronnie on 21-04-14.
@@ -120,7 +121,7 @@ public class MainForm extends JFrame {
                             String colorCode = values[5];
                             Color color = Color.decode("#" + colorCode);
 
-                            String format = String.format("name:%s,x:%s,z:%s,y:%s,enabled:%s,red:%f,green:%f,blue:%f,suffix:,world:,dimension:%s\r\n", values[0], values[1], values[2], values[3], values[4],
+                            String format = String.format(Locale.ENGLISH, "name:%s,x:%s,z:%s,y:%s,enabled:%s,red:%f,green:%f,blue:%f,suffix:,world:,dimension:%s\r\n", values[0], values[1], values[2], values[3], values[4],
                                     (color.getRed() / 255f), (color.getGreen() / 255f), (color.getBlue() / 255f), reiPointFile.getDimension() + "#");
 //                            appendLog("Adding: " + format);
                             voxelBuffer.append(format);
