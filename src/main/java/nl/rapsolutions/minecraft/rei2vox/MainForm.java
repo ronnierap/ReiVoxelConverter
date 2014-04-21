@@ -121,8 +121,10 @@ public class MainForm extends JFrame {
                             String colorCode = values[5];
                             Color color = Color.decode("#" + colorCode);
 
-                            String format = String.format(Locale.ENGLISH, "name:%s,x:%s,z:%s,y:%s,enabled:%s,red:%f,green:%f,blue:%f,suffix:,world:,dimension:%s\r\n", values[0], values[1], values[3], values[2], values[4],
+                            // Incorporate the offset the signs are placed one higher in Rei's Map
+                            String format = String.format(Locale.ENGLISH, "name:%s,x:%s,z:%s,y:%s,enabled:%s,red:%f,green:%f,blue:%f,suffix:,world:,dimensions:%s\r\n", values[0], values[1], values[3], "" + (Integer.parseInt(values[2]) - 1), values[4],
                                     (color.getRed() / 255f), (color.getGreen() / 255f), (color.getBlue() / 255f), reiPointFile.getDimension() + "#");
+
 //                            appendLog("Adding: " + format);
                             voxelBuffer.append(format);
                         }
