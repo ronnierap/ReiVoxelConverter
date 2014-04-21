@@ -14,9 +14,9 @@ public class UserDir {
                 String applicationSupportDirectory = System.getProperty("user.home") + "/Library/Application Support/minecraft";
                 return applicationSupportDirectory;
             case WINDOWS:
-                return System.getenv("APPDATA") + File.pathSeparator + ".minecraft";
+                return System.getenv("APPDATA") + File.separatorChar + ".minecraft";
             default:
-                return System.getProperty("user.home") + File.pathSeparator + ".minecraft";
+                return System.getProperty("user.home") + File.separatorChar + ".minecraft";
         }
     }
 }
