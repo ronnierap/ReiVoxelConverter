@@ -17,3 +17,12 @@ This is just a simple basis setup in about one hour, so don't expect the world ;
 But feel free to fork and help extend this converter.
 
 Hopefully this will prevent you from spending hours converting Waypoints by hand.
+
+Run
+---------------
+Simply download the bin/ReiVoxelConverter.jar file and run it using Java. (Normally no issue when Java is installed)
+
+Help code
+---------------
+This project has been build using IntelliJ IDEA, you can get your community version from here:
+- http://www.jetbrains.com/idea/download/
