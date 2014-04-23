@@ -2,8 +2,8 @@ ReiVoxelConverter
 =================
 
 This Simple Java Application converts Waypoints from:
-Rei's Minimap Waypoints
-   into
+Rei's Mini map Waypoints
+   to
 VoxelMap Waypoints
 
 Simply point to your Minecraft Game Directory and press convert
