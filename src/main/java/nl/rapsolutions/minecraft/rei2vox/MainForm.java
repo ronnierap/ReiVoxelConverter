@@ -110,7 +110,7 @@ public class MainForm extends JFrame {
                     }
 
                     StringBuffer voxelBuffer = voxelFilemap.get(reiPointFile.getServer());
-
+                    int dimension = Integer.parseInt(reiPointFile.getDimension());
                     LineIterator it = null;
                     try {
                         it = FileUtils.lineIterator(pointfile, "UTF-8");
@@ -120,10 +120,19 @@ public class MainForm extends JFrame {
                             String[] values = line.split("\\:");
                             String colorCode = values[5];
                             Color color = Color.decode("#" + colorCode);
-
+							
+							//Nether waypoints are stored at the surfacecoordinates the 8 multiply rule would lead to
+							int x = Integer.parseInt(values[1]);
+							
+							int z = Integer.parseInt(values[3]);
+							if(dimension==-1)
+						    {
+								x*=8;
+								z*=8;
+							}
                             // Incorporate the offset the signs are placed one higher in Rei's Map
-                            String format = String.format(Locale.ENGLISH, "name:%s,x:%s,z:%s,y:%s,enabled:%s,red:%f,green:%f,blue:%f,suffix:,world:,dimensions:%s\r\n", values[0], values[1], values[3], "" + (Integer.parseInt(values[2]) - 1), values[4],
-                                    (color.getRed() / 255f), (color.getGreen() / 255f), (color.getBlue() / 255f), reiPointFile.getDimension() + "#");
+                            String format = String.format(Locale.ENGLISH, "name:%s,x:%s,z:%s,y:%s,enabled:%s,red:%f,green:%f,blue:%f,suffix:,world:,dimensions:%s\r\n", values[0], x,z, "" + (Integer.parseInt(values[2]) - 1), values[4],
+                                    (color.getRed() / 255f), (color.getGreen() / 255f), (color.getBlue() / 255f), dimension + "#");
 
 //                            appendLog("Adding: " + format);
                             voxelBuffer.append(format);
